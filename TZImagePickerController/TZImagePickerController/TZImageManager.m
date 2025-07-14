@@ -109,7 +109,7 @@ static dispatch_once_t onceToken;
     if (!self.sortAscendingByModificationDate) {
         option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:self.sortAscendingByModificationDate]];
     }
-    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
     for (PHAssetCollection *collection in smartAlbums) {
         // 有可能是PHCollectionList类的的对象，过滤掉
         if (![collection isKindOfClass:[PHAssetCollection class]]) continue;
